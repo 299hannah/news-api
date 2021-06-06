@@ -1,6 +1,6 @@
 class News_Article:
     '''
-    defines article objects
+    defines news article objects
     '''
 
     def __init__(self,title,description,url,image,published_on):
@@ -12,10 +12,10 @@ class News_Article:
 
 class News_source:
     '''
-    defines source objects
+    defines news source objects
     '''
     def __init__(self,news_id,name,description):
         self.news_id = news_id
         self.name = name
         self.description = description
-        
+
