@@ -26,4 +26,4 @@ The program lets a user pick a source from the various categories
 Reach me on  hannahwambui022@gmail.com
 ### License
 MIT
-Copyright (c) 2021 **299hannah*
+Copyright (c) 2021 *299hannah*
