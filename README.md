@@ -1,7 +1,7 @@
 # News App
 ## Description
 This is an application that picks news from various sources on News Api and displays the news. The news is categorized according to source.
-## BDD
+## How it works
 The program lets a user pick a source from the various categories
 * Example input: Displays News
 
