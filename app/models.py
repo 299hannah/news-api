@@ -3,19 +3,18 @@ class News_Article:
     defines news article objects
     '''
 
-    def __init__(self,title,description,url,image,published_on):
+    def __init__(self,title,description,url,urlToImage,publishedAt):
         self.title =title
         self.description = description
         self.url = url
-        self.image = image
-        self.published_on=published_on
+        self.urlToImage = urlToImage
+        self.publishedAt=publishedAt
 
 class News_source:
     '''
     defines news source objects
     '''
-    def __init__(self,news_id,name,description):
+    def __init__(self,news_id,name):
         self.news_id = news_id
         self.name = name
-        self.description = description
 

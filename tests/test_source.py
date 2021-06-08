@@ -10,6 +10,6 @@ class SourceTest(unittest.TestCase):
         '''
         Set up method thatt will run before every Test
         '''
-        self.new_source = News_source('news_id', 'name', 'description')
+        self.new_source = News_source('news_id', 'name')
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source,News_source))

@@ -1,46 +1,66 @@
 {% extends 'base.html'%}
-{% import 'macros.html' as macro %}
-
-<!-- Styles block -->
-
 {% block styles%}
     {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="">
 {% endblock %}
-
-    <!-- Content block -->
-    {% block content%}
-    <div class="container">
-       
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
-            <!-- General News -->
-            <h3>News Sources</h3>
-            <hr>
-            <div class="is-flex" style="display: flex; flex-wrap: wrap;">
-                {{macro.displaySourceList(general)}}
-            </div>
-        </div>
-
-
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
-            <!-- Technology News -->
-            <h3>Technology News Sources</h3>
-            <hr>
-            <div class="is-flex" style="display: flex; flex-wrap: wrap;" >
-                {{macro.displaySourceList(technology)}}
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"style="background:#FBFCFC; padding-bottom: 50px;">
-            <!-- Sports News -->
-            <h3>Sports News Sources</h3>
-            <hr>
-            <div class="is-flex" style="display: flex; flex-wrap: wrap;">
-                    {{macro.displaySourceList(sports)}}
-            </div>
-
-        </div>
-
-      
+{% block content %}
+<div class="container">
+<div class="row">
+  <div class="col-md-4">
+    <h2>Business news</h2>
+    {% for business_news in business %}
+  <div class="card border-primary " style="width: 18rem;">
+    
+    <div class="card-title"> <b>Title:</b><i>{{business_news.title}}</i></div>
+    <img src="{{business_news.urlToImage}}" class="card-img-top img-fluid" alt="business" height="200" width="200" >
+    <div class="card-body">
+    <p class="card-text">{{ business_news.description }}<p>
+      <a href="{{business_news.url}}" class="btn btn-primary">Read full article</a>
     </div>
-    {% endblock%}
+    <h5 class="card-footer"><b>created at:</b>{{ business_news.publishedAt}}</h5>
+   
+  </div>
+  <hr>
+  <br>
+  {% endfor %}
+  </div>
+  <div class="col-md-4">
+    <h2>Science news</h2>
+  <div class="card science" style="width: 18rem;">
+    {% for science_news in science %}
+    <div class="card-title"><b>Title: </b><i>{{science_news.title}}</i></div>
+    <img src="{{science_news.urlToImage}}" class="card-img-top img-fluid" alt="science" height="200" width="200">
+    <div class="card-body">
+      
+      <p class="card-text">{{ science_news.description}}<p>
+      <a href="{{science_news.url}}" class="btn btn-primary">Read full article</a>
+     
+    </div>
+    <h5 class="card-footer"><b>created at:</b>{{ science_news.publishedAt}}</h5>
+    <hr>
+    <br>
+    {% endfor %}
+  </div>
+  </div>
+
+  <div class="col-md-4">
+    <h2>entertainment news</h2>
+    <div class="card tesla" style="width: 18rem;">
+      {% for entertainment_news in entertainment %}
+      <div class="card-title"><b>Title:</b><i>{{entertainment_news.title}}</i></div>
+      <img src="{{entertainment_news.urlToImage}}" class="card-img-top img-fluid" alt="entertainment" height="200" width="200">
+      <div class="card-body">        <p class="card-text">{{ entertainment_news.description}}<p>
+      <a href="{{entertainment_news.url}}" class="btn btn-primary">Read full article</a>
+      </div>
+      <h5 class="card-footer"><b>created at:</b>{{ entertainment_news.publishedAt}}</h5>
+      <hr>
+      <br>
+      {% endfor %}
+    </div>
+  </div>
+
+
+</div>
+</div>
+
+{% endblock %} 

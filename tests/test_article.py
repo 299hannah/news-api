@@ -1,5 +1,5 @@
 import unittest
-from app.models import News_Article
+from .models import News_Article
 
 class ArticleTest(unittest.TestCase):
     '''
@@ -9,7 +9,7 @@ class ArticleTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_article = News_Article('title', 'description', 'url', 'image', 'published_on')
+        self.new_article = News_Article('title', 'description', 'url', 'urlToImage', 'publishedAt')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_article,News_Article))
